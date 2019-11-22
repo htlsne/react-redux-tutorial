@@ -1,11 +1,12 @@
 import { ADD_TODO, TOGGLE_TODO } from "../actionTypes";
+import { TodoState } from "../../types";
 
-const initialState = {
+const initialState: TodoState = {
   allIds: [],
   byIds: {}
 };
 
-export default function(state = initialState, action) {
+export default function(state: TodoState = initialState, action) {
   switch (action.type) {
     case ADD_TODO: {
       const { id, content } = action.payload;

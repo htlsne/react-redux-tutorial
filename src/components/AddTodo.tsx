@@ -1,12 +1,12 @@
 import React from "react";
 
-class AddTodo extends React.Component {
-  constructor(props) {
+class AddTodo extends React.Component<{}, {input: string}> {
+  constructor(props: {}) {
     super(props);
     this.state = { input: "" };
   }
 
-  updateInput = input => {
+  updateInput = (input: string): void => {
     this.setState({ input });
   };
 
@@ -15,11 +15,13 @@ class AddTodo extends React.Component {
     // sets state back to empty string
   };
 
-  render() {
+  render(): React.ReactNode {
     return (
       <div>
         <input
-          onChange={e => this.updateInput(e.target.value)}
+          onChange={(e: React.ChangeEvent<HTMLInputElement>): void =>
+            this.updateInput(e.target.value)
+          }
           value={this.state.input}
         />
         <button className="add-todo" onClick={this.handleAddTodo}>

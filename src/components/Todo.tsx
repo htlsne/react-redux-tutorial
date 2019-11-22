@@ -1,7 +1,8 @@
 import React from "react";
 import cx from "classnames";
+import { ITodo } from "../types";
 
-const Todo = ({ todo }) => (
+const Todo = ({ todo }: { todo: ITodo }) => (
   <li
     className="todo-item"
     onClick={() => {} /** dispatches action to toggle todo */}

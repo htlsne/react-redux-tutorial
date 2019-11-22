@@ -2,7 +2,7 @@ import React from "react";
 import cx from "classnames";
 import { VISIBILITY_FILTERS } from "../constants";
 
-const VisibilityFilters = ({ activeFilter }) => {
+const VisibilityFilters = ({ activeFilter }: { activeFilter?: any }) => {
   return (
     <div className="visibility-filters">
       {Object.keys(VISIBILITY_FILTERS).map(filterKey => {
