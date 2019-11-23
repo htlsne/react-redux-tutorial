@@ -1,6 +1,6 @@
 import React from "react";
 
-class AddTodo extends React.Component<{}, {input: string}> {
+class AddTodo extends React.Component<{}, { input: string }> {
   constructor(props: {}) {
     super(props);
     this.state = { input: "" };
