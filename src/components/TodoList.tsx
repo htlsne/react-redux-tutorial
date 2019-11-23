@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import Todo from "./Todo";
 import { ITodo } from "../types";
+import { getTodos } from "../redux/selectors"
 
 const TodoList = ({ todos }: { todos?: ITodo[] }) => (
   <ul className="todo-list">
@@ -13,13 +14,4 @@ const TodoList = ({ todos }: { todos?: ITodo[] }) => (
   </ul>
 );
 
-const mapStateToProps = state => {
-  const { byIds, allIds } = state.todos || {};
-  const todos =
-    allIds && allIds.length
-      ? allIds.map(id => (byIds ? { ...byIds[id], id } : null))
-      : null;
-  return { todos };
-};
-
-export default connect(mapStateToProps)(TodoList);
+export default connect(state => ({ todos: getTodos(state) }))(TodoList);
