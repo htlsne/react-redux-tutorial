@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import Todo from "./Todo";
 import { ITodo } from "../types";
-import { getTodos } from "../redux/selectors"
+import { getTodos } from "../redux/selectors";
 
 const TodoList = ({ todos }: { todos?: ITodo[] }) => (
   <ul className="todo-list">
